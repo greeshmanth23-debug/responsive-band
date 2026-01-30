@@ -1,8 +1,16 @@
-function playsound(event){
-    switch(event.key){
+function drumanimation(currentkey){
+    var activebutton=document.querySelector(`.${currentkey}`);
+    activebutton.classList.add("pressed");
+    setTimeout(function(){
+        activebutton.classList.remove("pressed");
+    },100);
+}
+function playsound(key){
+    switch(key){
         case "q":
             var tom1 = new Audio("sounds/tom-1.mp3");
             tom1.play();
+            drumanimation("q");
             break;
         case "w":
             var tom2 = new Audio("sounds/tom-2.mp3");
@@ -32,4 +40,14 @@ function playsound(event){
             console.log(event.key);
     }
 }
-document.addEventListener("keypress", playsound);
+document.addEventListener("keypress", function(event) {
+    playsound(event.key);
+    drumanimation(event.key);
+});
+let drum=document.getElementsByClassName("drum");
+for(let i=0;i<drum.length;i++){
+    drum[i].addEventListener("click",function(){
+        playsound(drum[i].innerHTML);
+        drumanimation(drum[i].innerHTML);
+    })
+}

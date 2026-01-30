@@ -15,16 +15,20 @@ footer {
   color: #DBEDF3;
   font-family: sans-serif;
 }
+.pressed {
+  box-shadow: 0 30px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
 
-.q {
+.p {
+  background-image: url(images/kick.png);
+}
+
+.o {
   background-image: url(./images/crash.png);
 }
 
-.w {
-  background-image: url(./images/kick.png);
-}
-
-.e {
+.i {
   background-image: url(./images/snare.png);
 }
 
@@ -32,15 +36,15 @@ footer {
   background-image: url(./images/tom1.png);
 }
 
-.i {
+.e {
   background-image: url(./images/tom2.png);
 }
 
-.o {
+.w {
   background-image: url(./images/tom3.png);
 }
 
-.p {
+.q {
   background-image: url(./images/tom4.png);
 }
 
